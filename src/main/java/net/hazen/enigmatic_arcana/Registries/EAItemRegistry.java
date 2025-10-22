@@ -1,12 +1,18 @@
 package net.hazen.enigmatic_arcana.Registries;
 
+import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.enigmatic_arcana.EnigmaticArcana;
+import net.hazen.enigmatic_arcana.Items.Equipment.Armor.AgroconicSets.ApothicCrusader.ApothicCrusaderArmorItem;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwark;
 import net.hazen.enigmatic_arcana.Items.Equipment.Weapons.Nihility;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
+
+import java.util.Collection;
 
 public class EAItemRegistry {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(EnigmaticArcana.MOD_ID);
@@ -21,6 +27,14 @@ public class EAItemRegistry {
             ));
 
     /*
+    *** Curios
+     */
+
+    // Arbitrium Wings
+    public static final DeferredItem<AgroconicBulwark> AGROCONIC_BULWARK = ITEMS.register("agroconic_bulwark", AgroconicBulwark::new);
+
+
+    /*
     *** Weapons
      */
 
@@ -30,34 +44,36 @@ public class EAItemRegistry {
             ("nihility", Nihility::new);
 
 
-/*
-    public static final DeferredHolder<Item, Item> CREAKIN_MASK = ITEMS.register("creaking_mask",
+    public static final DeferredHolder<Item, Item> APOTHIC_CRUSADER_HELMET = ITEMS.register("apothic_crusader_mask",
             () -> new ApothicCrusaderArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
-            .durability(ArmorItem.Type.HELMET.getDurability(19)
-            )));
-    public static final DeferredHolder<Item, Item> CREAKIN_CHESTPLATE = ITEMS.register("creaking_chestplate",
+            ));
+    public static final DeferredHolder<Item, Item> APOTHIC_CRUSADER_CHESTPLATE = ITEMS.register("apothic_crusader_chestplate",
             () -> new ApothicCrusaderArmorItem(ArmorItem.Type.CHESTPLATE, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
-            .durability(ArmorItem.Type.CHESTPLATE.getDurability(19)
-            )));
-    public static final DeferredHolder<Item, Item> CREAKIN_LEGGINGS = ITEMS.register("creaking_leggings",
+            ));
+    public static final DeferredHolder<Item, Item> APOTHIC_CRUSADER_LEGGINGS = ITEMS.register("apothic_crusader_leggings",
             () -> new ApothicCrusaderArmorItem(ArmorItem.Type.LEGGINGS, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
-            .durability(ArmorItem.Type.LEGGINGS.getDurability(19)
-            )));
-    public static final DeferredHolder<Item, Item> CREAKIN_BOOTS = ITEMS.register("creaking_boots",
+            ));
+    public static final DeferredHolder<Item, Item> APOTHIC_CRUSADER_BOOTS = ITEMS.register("apothic_crusader_boots",
             () -> new ApothicCrusaderArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()
-            .durability(ArmorItem.Type.BOOTS.getDurability(19)
-            )));
- */
+            ));
 
-    public static void register(IEventBus eventBus) {
+
+
+    public static Collection<DeferredHolder<Item, ? extends Item>> getEAItems()
+    {
+        return ITEMS.getEntries();
+    }
+
+    public static void register(IEventBus eventBus)
+    {
         ITEMS.register(eventBus);
     }
 }

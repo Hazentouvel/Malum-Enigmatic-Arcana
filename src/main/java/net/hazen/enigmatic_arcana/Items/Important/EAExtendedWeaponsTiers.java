@@ -22,16 +22,15 @@ public class EAExtendedWeaponsTiers implements Tier, IronsWeaponTier {
 
     public static EAExtendedWeaponsTiers NIHILITY = new EAExtendedWeaponsTiers(
             8064,
-            7,
-            -2.9F,
+            2F,
             10,
             BlockTags.INCORRECT_FOR_NETHERITE_TOOL,
             () -> Ingredient.of(MalumItems.SOUL_STAINED_STEEL_PLATING.get()),
             new AttributeContainer(AttributeRegistry.SPELL_POWER, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+            new AttributeContainer(AttributeRegistry.SPELL_RESIST, 0.1, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
             new AttributeContainer(Attributes.ENTITY_INTERACTION_RANGE, 2, AttributeModifier.Operation.ADD_VALUE)
     );
 
-    //private final int level;
     int uses;
     float damage;
     float speed;
@@ -40,10 +39,9 @@ public class EAExtendedWeaponsTiers implements Tier, IronsWeaponTier {
     Supplier<Ingredient> repairIngredient;
     AttributeContainer[] attributes;
 
-    private EAExtendedWeaponsTiers(int uses, float damage, float speed, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
+    private EAExtendedWeaponsTiers(int uses, float damage, int enchantmentValue, TagKey<Block> incorrectBlocksForDrops, Supplier<Ingredient> repairIngredient, AttributeContainer... attributes) {
         this.uses = uses;
         this.damage = damage;
-        this.speed = speed;
         this.enchantmentValue = enchantmentValue;
         this.incorrectBlocksForDrops = incorrectBlocksForDrops;
         this.repairIngredient = repairIngredient;

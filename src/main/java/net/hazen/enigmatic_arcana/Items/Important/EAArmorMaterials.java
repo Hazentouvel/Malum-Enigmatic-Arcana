@@ -22,7 +22,7 @@ public class EAArmorMaterials {
     private static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(Registries.ARMOR_MATERIAL, EnigmaticArcana.MOD_ID);
 
     public static DeferredHolder<ArmorMaterial, ArmorMaterial> AGROCONIC_MATERIAL = register("agroconic",
-            advancedBattlemageArmorMap(),
+            agroconicArmorMap(),
             20,
             SoundEvents.ARMOR_EQUIP_NETHERITE,
             () -> Ingredient.of(MalumItems.SOUL_STAINED_STEEL_PLATING.get()),
@@ -48,15 +48,7 @@ public class EAArmorMaterials {
         });
     }
 
-    public static EnumMap<ArmorItem.Type, Integer> pureArmorMap()
-    {
-        return makeArmorMap(5, 10, 8, 5);
-    }
-
-    public static EnumMap<ArmorItem.Type, Integer> battlemageArmorMap(){return makeArmorMap(3, 8, 6, 3);}
-    public static EnumMap<ArmorItem.Type, Integer> deityArmorMap(){return makeArmorMap(20, 20, 20, 20);}
-    public static EnumMap<ArmorItem.Type, Integer> advancedBattlemageArmorMap(){return makeArmorMap(4, 6, 9, 4);}
-    public static EnumMap<ArmorItem.Type, Integer> pyrium(){return makeArmorMap(4, 6, 9, 4);}
+    public static EnumMap<ArmorItem.Type, Integer> agroconicArmorMap(){return makeArmorMap(4, 9, 7, 4);}
 
     public static void register(IEventBus eventBus)
     {

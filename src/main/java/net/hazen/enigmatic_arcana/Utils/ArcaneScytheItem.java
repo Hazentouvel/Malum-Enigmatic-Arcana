@@ -18,18 +18,7 @@ public class ArcaneScytheItem extends MagicScytheItem implements IPresetSpellCon
         super(tier, attackDamage, attackSpeed, magicDamage, properties);
     }
 
-    public static ItemAttributeModifiers createAttributes(IronsWeaponTier pTier) {
-        ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder().add(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_ID, (double)pTier.getAttackDamageBonus(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND).add(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_ID, (double)pTier.getSpeed(), AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
-
-        for(AttributeContainer holder : pTier.getAdditionalAttributes()) {
-            builder.add(holder.attribute(), holder.createModifier(EquipmentSlot.MAINHAND.getName()), EquipmentSlotGroup.MAINHAND);
-        }
-
-        return builder.build();
-    }
-
     @Override
     public void initializeSpellContainer(ItemStack itemStack) {
-
     }
 }

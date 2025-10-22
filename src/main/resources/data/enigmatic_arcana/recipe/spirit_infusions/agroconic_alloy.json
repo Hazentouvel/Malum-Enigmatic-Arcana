@@ -1,0 +1,39 @@
+{
+  "type": "malum:spirit_infusion",
+  "extraIngredients": [
+    {
+      "count": 4,
+      "item": "malum:refined_soulstone"
+    },
+    {
+      "count": 2,
+      "item": "irons_spellbooks:arcane_ingot"
+    },
+    {
+      "count": 2,
+      "item": "irons_spellbooks:mithril_scrap"
+    }
+  ],
+  "ingredient": {
+    "count": 1,
+    "item": "malum:soul_stained_steel_ingot"
+  },
+  "output": {
+    "count": 1,
+    "id": "enigmatic_arcana:agroconic_alloy"
+  },
+  "spirits": [
+    {
+      "type": "eldritch",
+      "count": 6
+    },
+    {
+      "type": "arcane",
+      "count": 12
+    },
+    {
+      "type": "wicked",
+      "count": 12
+    }
+  ]
+}

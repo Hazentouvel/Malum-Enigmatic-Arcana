@@ -1,5 +1,15 @@
 package net.hazen.enigmatic_arcana;
 
+import io.redspace.ironsspellbooks.item.SpellBook;
+import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
+import mod.azure.azurelib.common.animation.cache.AzIdentityRegistry;
+import mod.azure.azurelib.common.render.armor.AzArmorRendererRegistry;
+import net.acetheeldritchking.aces_spell_utils.entity.render.items.SheathCurioRenderer;
+import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
+import net.hazen.enigmatic_arcana.Items.Equipment.Armor.AgroconicSets.ApothicCrusader.ApothicCrusaderArmorRenderer;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkItemRenderer;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkRenderer;
+import net.hazen.enigmatic_arcana.Items.Important.EAArmorMaterials;
 import net.hazen.enigmatic_arcana.Registries.EACreativeModeTabs;
 import net.hazen.enigmatic_arcana.Registries.EAItemRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -19,8 +29,8 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
-// The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(EnigmaticArcana.MOD_ID)
 public class EnigmaticArcana {
     public static final String MOD_ID = "enigmatic_arcana";
@@ -31,6 +41,9 @@ public class EnigmaticArcana {
 
 
         EAItemRegistry.register(modEventBus);
+        EAArmorMaterials.register(modEventBus);
+
+
         EACreativeModeTabs.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -41,21 +54,68 @@ public class EnigmaticArcana {
     private void commonSetup(FMLCommonSetupEvent event) {
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-    }
-
-    @EventBusSubscriber(value = Dist.CLIENT)
-    static class ClientModEvents {
-        @SubscribeEvent
-        static void onClientSetup(FMLClientSetupEvent event) {
-        }
     }
 
 
     public static ResourceLocation id(@NotNull String path)
     {
         return ResourceLocation.fromNamespaceAndPath(EnigmaticArcana.MOD_ID, path);
+    }
+
+    @EventBusSubscriber(value = Dist.CLIENT)
+    public static class ClientModEvents
+    {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event)
+        {
+            event.enqueueWork(() -> {
+                EAItemRegistry.getEAItems().stream().filter(item -> item.get() instanceof SpellBook).forEach((item) -> CuriosRendererRegistry.register(item.get(), SpellBookCurioRenderer::new));
+                EAItemRegistry.getEAItems().stream().filter(item -> item.get() instanceof SheathCurioItem).forEach((item) -> CuriosRendererRegistry.register(item.get(), SheathCurioRenderer::new));
+            });
+            /*
+             *** Armor Rendering Registry
+             */
+
+            //Apothic Crusader
+            AzArmorRendererRegistry.register(ApothicCrusaderArmorRenderer::new,
+                    EAItemRegistry.APOTHIC_CRUSADER_HELMET.get(),
+                    EAItemRegistry.APOTHIC_CRUSADER_CHESTPLATE.get(),
+                    EAItemRegistry.APOTHIC_CRUSADER_LEGGINGS.get(),
+                    EAItemRegistry.APOTHIC_CRUSADER_BOOTS.get()
+            );
+
+
+
+            /*
+            *** Curio Renderer
+             */
+
+            /*
+             *** Spellbooks
+             */
+
+            // Agroconic Bulwark
+            AzArmorRendererRegistry.register(AgroconicBulwarkItemRenderer::new, EAItemRegistry.AGROCONIC_BULWARK.get());
+            CuriosRendererRegistry.register(
+                    EAItemRegistry.AGROCONIC_BULWARK.get(), AgroconicBulwarkRenderer::new
+            );
+
+            /*
+             ***Animation Registry
+             */
+
+            AzIdentityRegistry.register(
+
+                    EAItemRegistry.APOTHIC_CRUSADER_HELMET.get(),
+                    EAItemRegistry.APOTHIC_CRUSADER_CHESTPLATE.get(),
+                    EAItemRegistry.APOTHIC_CRUSADER_LEGGINGS.get(),
+                    EAItemRegistry.APOTHIC_CRUSADER_BOOTS.get(),
+
+                    EAItemRegistry.AGROCONIC_BULWARK.get()
+
+            );
+        }
     }
 }

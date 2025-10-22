@@ -167,8 +167,8 @@ dependencies {
     implementation "curse.maven:lodestone-616457:6630047"
 
     // Iron's Gems 'n Jewelry
-    localRuntime "curse.maven:irons_gems_n_jewelry-1101111:7084345"
-    localRuntime "curse.maven:atlas_api-1145462:6880789"
+    //localRuntime "curse.maven:irons_gems_n_jewelry-1101111:7084345"
+    //localRuntime "curse.maven:atlas_api-1145462:6880789"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

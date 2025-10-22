@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "ENIGMATIC_ARCANA_RARITY_FIRE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "net/hazen/enigmatic_arcana/Utils/EARarities",
+        "field": "AGROCONIC_RARITY"
+      }
+    }
+  ]
+}

@@ -26,7 +26,15 @@ public class EACreativeModeTabs {
                          */
 
                         output.accept(EAItemRegistry.AGROCONIC_ALLOY.get());
+
                         output.accept(EAItemRegistry.NIHILITY.get());
+
+                        output.accept(EAItemRegistry.AGROCONIC_BULWARK.get());
+
+                        output.accept(EAItemRegistry.APOTHIC_CRUSADER_HELMET.get());
+                        output.accept(EAItemRegistry.APOTHIC_CRUSADER_CHESTPLATE.get());
+                        output.accept(EAItemRegistry.APOTHIC_CRUSADER_LEGGINGS.get());
+                        output.accept(EAItemRegistry.APOTHIC_CRUSADER_BOOTS.get());
 
                     }).build());
 
