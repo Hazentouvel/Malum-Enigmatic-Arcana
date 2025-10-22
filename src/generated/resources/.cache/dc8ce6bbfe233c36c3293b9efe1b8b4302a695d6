@@ -1,0 +1,21 @@
+// 1.21.1	2025-10-21T21:56:04.2076788	Tags for minecraft:item mod id enigmatic_arcana
+0284879635c8776c201fcea9013fcc5c6f2de120 data/c/tags/item/armors.json
+d1b99e306f7cf5f23e9e36ff309021511089d5b7 data/c/tags/item/enchantables.json
+c78867faf70fd8cd33cd96f05340a7b7f4303858 data/c/tags/item/ingots.json
+d1b99e306f7cf5f23e9e36ff309021511089d5b7 data/irons_spellbooks/tags/item/imbue_whitelist.json
+d1b99e306f7cf5f23e9e36ff309021511089d5b7 data/irons_spellbooks/tags/item/upgrade_whitelist.json
+2bf685d3999e884884ee373bdef093d4b346978e data/malum/tags/item/magic_capable_weapon.json
+2bf685d3999e884884ee373bdef093d4b346978e data/malum/tags/item/scythe.json
+db46da5f5712f3879e9db9214ceb1d305a086afc data/minecraft/tags/item/chest_armor.json
+0284879635c8776c201fcea9013fcc5c6f2de120 data/minecraft/tags/item/enchantable/armor.json
+db46da5f5712f3879e9db9214ceb1d305a086afc data/minecraft/tags/item/enchantable/chest_armor.json
+2bf685d3999e884884ee373bdef093d4b346978e data/minecraft/tags/item/enchantable/durability.json
+0284879635c8776c201fcea9013fcc5c6f2de120 data/minecraft/tags/item/enchantable/equippable.json
+4f2482ae46772ae0d8d4892a262629ce380fd689 data/minecraft/tags/item/enchantable/foot_armor.json
+b6c746dd3a1363976adeeb71ea4e96a9c6b49954 data/minecraft/tags/item/enchantable/head_armor.json
+4643c6333925c0ada6519ff9320c7dc002f953d5 data/minecraft/tags/item/enchantable/leg_armor.json
+2bf685d3999e884884ee373bdef093d4b346978e data/minecraft/tags/item/enchantable/sharp_weapon.json
+4f2482ae46772ae0d8d4892a262629ce380fd689 data/minecraft/tags/item/foot_armor.json
+b6c746dd3a1363976adeeb71ea4e96a9c6b49954 data/minecraft/tags/item/head_armor.json
+4643c6333925c0ada6519ff9320c7dc002f953d5 data/minecraft/tags/item/leg_armor.json
+2bf685d3999e884884ee373bdef093d4b346978e data/minecraft/tags/item/swords.json
