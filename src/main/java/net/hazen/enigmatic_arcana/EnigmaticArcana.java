@@ -9,6 +9,8 @@ import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.enigmatic_arcana.Items.Equipment.Armor.AgroconicSets.ApothicCrusader.ApothicCrusaderArmorRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkItemRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkRenderer;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.Spellbooks.Antonomos.AntonomosItemRenderer;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.Spellbooks.Antonomos.AntonomosRenderer;
 import net.hazen.enigmatic_arcana.Items.Important.EAArmorMaterials;
 import net.hazen.enigmatic_arcana.Registries.*;
 import net.minecraft.resources.ResourceLocation;
@@ -99,6 +101,12 @@ public class EnigmaticArcana {
             /*
              *** Spellbooks
              */
+
+            // Agroconic Bulwark
+            AzArmorRendererRegistry.register(AntonomosItemRenderer::new, EAItemRegistry.ANTONOMOS.get());
+            CuriosRendererRegistry.register(
+                    EAItemRegistry.ANTONOMOS.get(), AntonomosRenderer::new
+            );
 
             /*
              *** Animation Registry

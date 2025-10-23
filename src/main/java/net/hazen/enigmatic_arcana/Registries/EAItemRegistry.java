@@ -4,6 +4,7 @@ import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.hazen.enigmatic_arcana.EnigmaticArcana;
 import net.hazen.enigmatic_arcana.Items.Equipment.Armor.AgroconicSets.ApothicCrusader.ApothicCrusaderArmorItem;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwark;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.Spellbooks.Antonomos.Antonomos;
 import net.hazen.enigmatic_arcana.Items.Equipment.Weapons.Nihility;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -37,6 +38,10 @@ public class EAItemRegistry {
     /*
     *** Spellbooks
      */
+
+    // Agroconic Bulwark
+    public static final DeferredItem<Antonomos> ANTONOMOS = ITEMS.register("antonomos", Antonomos::new);
+
 
 
 
