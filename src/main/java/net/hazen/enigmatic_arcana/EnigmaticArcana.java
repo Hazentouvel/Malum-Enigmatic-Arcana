@@ -10,8 +10,7 @@ import net.hazen.enigmatic_arcana.Items.Equipment.Armor.AgroconicSets.ApothicCru
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkItemRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkRenderer;
 import net.hazen.enigmatic_arcana.Items.Important.EAArmorMaterials;
-import net.hazen.enigmatic_arcana.Registries.EACreativeModeTabs;
-import net.hazen.enigmatic_arcana.Registries.EAItemRegistry;
+import net.hazen.enigmatic_arcana.Registries.*;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -42,9 +41,9 @@ public class EnigmaticArcana {
 
         EAItemRegistry.register(modEventBus);
         EAArmorMaterials.register(modEventBus);
-
-
         EACreativeModeTabs.register(modEventBus);
+
+        EASchoolRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
@@ -74,6 +73,7 @@ public class EnigmaticArcana {
                 EAItemRegistry.getEAItems().stream().filter(item -> item.get() instanceof SpellBook).forEach((item) -> CuriosRendererRegistry.register(item.get(), SpellBookCurioRenderer::new));
                 EAItemRegistry.getEAItems().stream().filter(item -> item.get() instanceof SheathCurioItem).forEach((item) -> CuriosRendererRegistry.register(item.get(), SheathCurioRenderer::new));
             });
+
             /*
              *** Armor Rendering Registry
              */
@@ -86,14 +86,8 @@ public class EnigmaticArcana {
                     EAItemRegistry.APOTHIC_CRUSADER_BOOTS.get()
             );
 
-
-
             /*
             *** Curio Renderer
-             */
-
-            /*
-             *** Spellbooks
              */
 
             // Agroconic Bulwark
@@ -103,7 +97,11 @@ public class EnigmaticArcana {
             );
 
             /*
-             ***Animation Registry
+             *** Spellbooks
+             */
+
+            /*
+             *** Animation Registry
              */
 
             AzIdentityRegistry.register(

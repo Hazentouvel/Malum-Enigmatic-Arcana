@@ -20,7 +20,6 @@ import top.theillusivec4.curios.api.SlotContext;
 public class AgroconicBulwark extends CurioBaseItem {
     public final EADispatcher dispatcher;
 
-
     public AgroconicBulwark() {
         super(ItemPropertiesHelper
                 .equipment()

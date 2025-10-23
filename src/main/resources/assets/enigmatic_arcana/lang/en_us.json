@@ -3,7 +3,15 @@
 
 
 
+  "item.enigmatic_arcana.agroconic_bulwark": "Agroconic Bulwark",
+
+
   "item.enigmatic_arcana.nihility": "Nihility",
+
+  "item.enigmatic_arcana.apothic_crusader_helmet": "Apothic Crusader Hood",
+  "item.enigmatic_arcana.apothic_crusader_chestplate": "Apothic Crusader Robes",
+  "item.enigmatic_arcana.apothic_crusader_leggings": "Apothic Crusader Leggings",
+  "item.enigmatic_arcana.apothic_crusader_boots": "Apothic Crusader Boots",
 
   "creativetab.enigmatic_arcana.ea_equipment": "Enigmatic Equipment"
 }

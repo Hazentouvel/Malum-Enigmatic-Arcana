@@ -30,8 +30,14 @@ public class EAItemRegistry {
     *** Curios
      */
 
-    // Arbitrium Wings
+    // Agroconic Bulwark
     public static final DeferredItem<AgroconicBulwark> AGROCONIC_BULWARK = ITEMS.register("agroconic_bulwark", AgroconicBulwark::new);
+
+
+    /*
+    *** Spellbooks
+     */
+
 
 
     /*
@@ -44,7 +50,11 @@ public class EAItemRegistry {
             ("nihility", Nihility::new);
 
 
-    public static final DeferredHolder<Item, Item> APOTHIC_CRUSADER_HELMET = ITEMS.register("apothic_crusader_mask",
+    /*
+    *** Armor
+     */
+
+    public static final DeferredHolder<Item, Item> APOTHIC_CRUSADER_HELMET = ITEMS.register("apothic_crusader_helmet",
             () -> new ApothicCrusaderArmorItem(ArmorItem.Type.HELMET, ItemPropertiesHelper
             .equipment(1)
             .fireResistant()

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "enigmatic_arcana:item/antonomos_model"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "enigmatic_arcana:item/antonomos_gui"
+    }
+  }
+}
