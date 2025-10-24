@@ -30,6 +30,7 @@ public class EACreativeModeTabs {
                         output.accept(EAItemRegistry.NIHILITY.get());
 
                         output.accept(EAItemRegistry.AGROCONIC_BULWARK.get());
+                        output.accept(EAItemRegistry.AGROCONIC_WINGS.get());
                         output.accept(EAItemRegistry.ANTONOMOS.get());
 
                         output.accept(EAItemRegistry.APOTHIC_CRUSADER_HELMET.get());

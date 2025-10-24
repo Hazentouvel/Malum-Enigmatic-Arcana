@@ -144,6 +144,11 @@ dependencies {
     implementation "curse.maven:player_animator-658587:6024462"
     implementation "curse.maven:curios-309927:6342656"
 
+    //Apothic Attributes
+    implementation "curse.maven:apothic-attributes-898963:6302334"
+    implementation "curse.maven:placebo-283644:6337156"
+    compileOnly "curse.maven:apotheosis-${apotheosis_version}"
+
     //Ace Utils
     implementation "curse.maven:ace_utils-1299492:7119308"
 

@@ -9,6 +9,8 @@ import net.acetheeldritchking.aces_spell_utils.items.curios.SheathCurioItem;
 import net.hazen.enigmatic_arcana.Items.Equipment.Armor.AgroconicSets.ApothicCrusader.ApothicCrusaderArmorRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkItemRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicBulwark.AgroconicBulwarkRenderer;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicWings.AgroconicWingsItemRenderer;
+import net.hazen.enigmatic_arcana.Items.Equipment.Curios.CustomCurios.AgroconicWings.AgroconicWingsRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.Spellbooks.Antonomos.AntonomosItemRenderer;
 import net.hazen.enigmatic_arcana.Items.Equipment.Curios.Spellbooks.Antonomos.AntonomosRenderer;
 import net.hazen.enigmatic_arcana.Items.Important.EAArmorMaterials;
@@ -97,12 +99,17 @@ public class EnigmaticArcana {
             CuriosRendererRegistry.register(
                     EAItemRegistry.AGROCONIC_BULWARK.get(), AgroconicBulwarkRenderer::new
             );
+            // Agroconic Wings
+            AzArmorRendererRegistry.register(AgroconicWingsItemRenderer::new, EAItemRegistry.AGROCONIC_WINGS.get());
+            CuriosRendererRegistry.register(
+                    EAItemRegistry.AGROCONIC_WINGS.get(), AgroconicWingsRenderer::new
+            );
 
             /*
              *** Spellbooks
              */
 
-            // Agroconic Bulwark
+            // Antonomos
             AzArmorRendererRegistry.register(AntonomosItemRenderer::new, EAItemRegistry.ANTONOMOS.get());
             CuriosRendererRegistry.register(
                     EAItemRegistry.ANTONOMOS.get(), AntonomosRenderer::new
@@ -119,6 +126,8 @@ public class EnigmaticArcana {
                     EAItemRegistry.APOTHIC_CRUSADER_LEGGINGS.get(),
                     EAItemRegistry.APOTHIC_CRUSADER_BOOTS.get(),
 
+                    EAItemRegistry.AGROCONIC_WINGS.get(),
+                    EAItemRegistry.ANTONOMOS.get(),
                     EAItemRegistry.AGROCONIC_BULWARK.get()
 
             );
