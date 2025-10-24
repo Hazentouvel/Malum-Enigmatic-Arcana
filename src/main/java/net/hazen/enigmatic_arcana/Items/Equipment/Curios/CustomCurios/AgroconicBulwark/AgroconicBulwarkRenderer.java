@@ -42,7 +42,7 @@ public class AgroconicBulwarkRenderer implements ICurioRenderer {
 
         curioRenderer.prepForRender(entity, stack, EquipmentSlot.BODY, (HumanoidModel<?>) renderLayerParent.getModel());
 
-        matrixStack.translate(0.0D, -0.9D, 0.0D); // x = sideways, y = up/down, z = forward/back
+        matrixStack.translate(0.0D, -0.6D, 0.0D); // x = sideways, y = up/down, z = forward/back
 
         AzBakedModel model = curioRenderer.provider().provideBakedModel(entity, stack);
         ResourceLocation textureLocation = AgroconicBulwarkItemRenderer.TEX;
